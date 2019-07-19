@@ -1,4 +1,7 @@
-from node import Node
+import sys
+sys.path += ['.']
+
+from Linked_List.node import Node
 
 
 class SingleLinkedList:
