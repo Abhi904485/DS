@@ -3,7 +3,6 @@ sys.path += ['.']
 
 from CircularSingleLinkedList.node import Node
 
-
 class CircularLinkedList():
     def __init__(self):
         self.head = None
@@ -66,7 +65,7 @@ class CircularLinkedList():
                 self.head = None
             else:
                 """If there is more than one or two node in circular linked list"""
-                fornone  = self.head
+                fornone = self.head
                 temp = self.head
                 self.head = temp.next
                 while temp.next is not self.head:
@@ -88,7 +87,7 @@ class CircularLinkedList():
             temp = self.head
             while temp.next.data is not node_data:
                 temp = temp.next
-            fornone  = temp.next
+            fornone = temp.next
             temp.next = temp.next.next
             fornone.next = None
 
@@ -107,28 +106,41 @@ class CircularLinkedList():
                     temp = temp.next
                 fornone = temp.next
                 temp.next = self.head
-                fornone.next  = None
-    
+                fornone.next = None
 
     def traverse(self):
-        """If there is no elements in circular linked list"""
-        if self.head is None:
-            print("Under flow")
-        else:
-            temp = self.head
-            while temp.next is not self.head:
-                print(str(temp.data)+"--->", end="")
-                temp = temp.next
-            print(str(temp.data)+"--->", end="")
+        p1 = self.head
+        if p1 is None:
+            print("There is no element in Linked List")
+        print("--" * 50)
+        print("HEAD", end=" ")
+        while p1.next != self.head:
+            print("--->|{}||{}|".format(str(p1.data),
+                                        str(p1.next.data) if p1.next else "None"), end="")
+            p1 = p1.next
+        print("--->|{}||{}|".format(str(p1.data), str(p1.next.data)
+                                    if p1.next else "None") + " HEAD --->")
+        print("--" * 50)
 
 
 c1 = CircularLinkedList()
 c1.insertion_start(Node(1))
-c1.insertion_start(Node(2))
-c1.insertion_start(Node(3))
-c1.insertion_specific(2, Node(4))
-c1.insertion_last(Node(5))
-# c1.deletion_start()
-c1.deletion_last()
-# c1.deletion_specific(4)
+print("After Insertion of Node 1 at start ")
 c1.traverse()
+print()
+c1.insertion_start(Node(2))
+print("After Insertion of Node 2 at start ")
+c1.traverse()
+print()
+c1.insertion_start(Node(3))
+print("After Insertion of Node 3 at start ")
+c1.traverse()
+print()
+c1.insertion_specific(2, Node(4))
+print("After Insertion of Node 4 at postion 2")
+c1.traverse()
+print()
+c1.insertion_last(Node(5))
+print("After Insertion of Node 5 at postion last")
+c1.traverse()
+print()

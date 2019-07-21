@@ -129,24 +129,42 @@ class CircularDoublyLinkedList:
             fornone.pre = None
 
     def traverse(self):
-        """If there is no element in list"""
-        if self.head is None:
-            print("Under flow")
-        else:
-            temp = self.head
-            while temp.next is not self.head:
-                print(str(temp.data)+"---->", end="")
-                temp = temp.next
-            print(str(temp.data)+"---->", end="")
+        p1 = self.head
+        if p1 is None:
+            print("There is no element in Linked List")
+        print("--" * 50)
+        print("HEAD", end=" ")
+        while p1.next != self.head:
+            print("--->|{}||{}||{}|".format(str(p1.pre.data) if p1.pre else "None", str(p1.data),
+                                            str(p1.next.data) if p1.next else "None"), end="")
+            p1 = p1.next
+        print("--->|{}||{}||{}|".format(str(p1.pre.data) if p1.pre else "None", str(p1.data),
+                                        str(p1.next.data) if p1.next else "None") + " HEAD --->")
+        print("--" * 50)
 
 
 cd1 = CircularDoublyLinkedList()
 cd1.insertion_start(Node(1))
-cd1.insertion_start(Node(2))
-cd1.insertion_start(Node(3))
-cd1.insertion_last(Node(4))
-cd1.insertion_specific(2, Node(5))
-# cd1.deletion_start()
-# cd1.deletion_last()
-# cd1.deletion_specific(1)
+print("After Inserting Node 1 at start ")
 cd1.traverse()
+print()
+cd1.insertion_start(Node(2))
+print("After Inserting Node 2 at start ")
+cd1.traverse()
+print()
+cd1.insertion_start(Node(3))
+print("After Inserting Node 3 at start ")
+cd1.traverse()
+print()
+cd1.insertion_last(Node(4))
+print("After Inserting Node 4 at last ")
+cd1.traverse()
+print()
+cd1.insertion_specific(2, Node(5))
+print("After Inserting Node 5 at second Postion ")
+cd1.traverse()
+print()
+cd1.deletion_start()
+print("After Deletion of Node from start postion ")
+cd1.traverse()
+print()

@@ -1,8 +1,6 @@
 import sys
 sys.path += ['.']
-
-from Linked_List.node import Node
-
+from SingleLinkedList.node import Node
 
 class SingleLinkedList:
 
@@ -46,21 +44,20 @@ class SingleLinkedList:
             self.head = temp.next
             temp.next = None
             """For freeing up Node"""
-            fornone.next =None
+            fornone.next = None
 
     def deletion_specific(self, after_node_data):
-       if self.head and self.head.next and self.head.next.next is None:
-           print("Underflow")
-       else:
-           temp = self.head
-           while temp.data is not after_node_data:
-               temp = temp.next
-           fornone = temp
-           temp.next = temp.next.next
-           """For freeing up Node"""
-           fornone.next =None
-            
-    
+        if self.head and self.head.next and self.head.next.next is None:
+            print("Underflow")
+        else:
+            temp = self.head
+            while temp.data is not after_node_data:
+                temp = temp.next
+            fornone = temp
+            temp.next = temp.next.next
+            """For freeing up Node"""
+            fornone.next = None
+
     def deletion_end(self):
         if self.head is None:
             print("under flow")
@@ -75,19 +72,37 @@ class SingleLinkedList:
             temp.next = None
 
     def traverse_list(self):
-        print("Traversing Start")
-        if self.head is None:
+        p1 = self.head
+        if p1 is None:
             print("There is no element in Linked List")
-
-        while self.head is not None:
-            print(str(self.head.data)+"--->", end="")
-            self.head = self.head.next
+        print("--" * 50)
+        print("HEAD",end = " ")
+        while p1 is not None:
+            print("--->|{}||{}|".format(str(p1.data),
+                                        str(p1.next.data) if p1.next else "None"), end="")
+            p1 = p1.next
+        print()
+        print("--" * 50)
 
 
 l1 = SingleLinkedList()
 l1.insertion_start(Node(1))
-l1.insertion_start(Node(2))
-l1.insertion_specific(1,Node(4))
-l1.insertion_last(Node(3))
-l1.deletion_specific(1)
+print("After Insertion 1 at start")
 l1.traverse_list()
+print()
+l1.insertion_start(Node(2))
+print("After Insertion 2 at start")
+l1.traverse_list()
+print()
+l1.insertion_specific(1, Node(4))
+print("After Insertion of Node 4 at postion 1 ")
+l1.traverse_list()
+print()
+l1.insertion_last(Node(3))
+print("After Insertion of Node 3 at postion last")
+l1.traverse_list()
+print()
+l1.deletion_specific(1)
+print("After Deletion at postion 1 ")
+l1.traverse_list()
+print()
