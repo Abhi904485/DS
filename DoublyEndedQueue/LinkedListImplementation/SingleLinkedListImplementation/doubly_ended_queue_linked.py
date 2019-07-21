@@ -1,4 +1,7 @@
-from node import Node
+import sys
+sys.path += ['.']
+
+from DoublyEndedQueue.LinkedListImplementation.SingleLinkedListImplementation.node import Node
 
 
 class DoublyEndedQueueSingleLinked:

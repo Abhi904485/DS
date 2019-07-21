@@ -1,4 +1,6 @@
-from node import Node
+import sys
+sys.path += ['.']
+from SingleEndedQueue.LinkedListImplementation.node import Node
 
 
 class SingleEndedQueueList:

@@ -1,4 +1,7 @@
-from node import Node
+import sys
+sys.path += ['.']
+
+from CircularSingleLinkedList.node import Node
 
 
 class CircularLinkedList():
