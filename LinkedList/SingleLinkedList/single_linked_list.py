@@ -1,6 +1,6 @@
 import sys
 sys.path += ['.']
-from SingleLinkedList.node import Node
+from LinkedList.SingleLinkedList.node import Node
 
 class SingleLinkedList:
 

@@ -1,7 +1,7 @@
 import sys
 sys.path += ['.']
 
-from DoublyLinkedList.node import Node
+from LinkedList.DoublyLinkedList.node import Node
 
 
 class DoublyLinkedList():

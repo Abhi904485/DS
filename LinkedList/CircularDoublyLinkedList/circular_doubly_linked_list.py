@@ -1,6 +1,6 @@
 import sys
 sys.path += ['.']
-from CircularDoublyLinkedList.node import Node
+from LinkedList.CircularDoublyLinkedList.node import Node
 
 
 class CircularDoublyLinkedList:
