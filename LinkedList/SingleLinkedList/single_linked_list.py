@@ -84,25 +84,58 @@ class SingleLinkedList:
         print()
         print("--" * 50)
 
+    def reverse_linked_list(self , p1):
+        if p1.next == None:
+            self.head = p1
+            return self.head
+        current = p1
+        next_ = current.next
+        self.reverse_linked_list(next_)
+        next_.next = current
+        current.next = None
+
+    def get_head(self):
+        return self.head
+
 
 l1 = SingleLinkedList()
 l1.insertion_start(Node(1))
 print("After Insertion 1 at start")
 l1.traverse_list()
 print()
+print("Linked List Reversed ")
+l1.reverse_linked_list(l1.get_head())
+l1.traverse_list()
+print()
 l1.insertion_start(Node(2))
 print("After Insertion 2 at start")
+l1.traverse_list()
+print()
+print("Linked List Reversed ")
+l1.reverse_linked_list(l1.get_head())
 l1.traverse_list()
 print()
 l1.insertion_specific(1, Node(4))
 print("After Insertion of Node 4 at postion 1 ")
 l1.traverse_list()
 print()
+print("Linked List Reversed ")
+l1.reverse_linked_list(l1.get_head())
+l1.traverse_list()
+print()
 l1.insertion_last(Node(3))
 print("After Insertion of Node 3 at postion last")
 l1.traverse_list()
 print()
+print("Linked List Reversed ")
+l1.reverse_linked_list(l1.get_head())
+l1.traverse_list()
+print()
 l1.deletion_specific(1)
 print("After Deletion at postion 1 ")
+l1.traverse_list()
+print()
+print("Linked List Reversed ")
+l1.reverse_linked_list(l1.get_head())
 l1.traverse_list()
 print()
