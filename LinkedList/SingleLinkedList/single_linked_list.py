@@ -76,7 +76,7 @@ class SingleLinkedList:
         if p1 is None:
             print("There is no element in Linked List")
         print("--" * 50)
-        print("HEAD",end = " ")
+        print("HEAD", end=" ")
         while p1 is not None:
             print("--->|{}||{}|".format(str(p1.data),
                                         str(p1.next.data) if p1.next else "None"), end="")
@@ -84,15 +84,26 @@ class SingleLinkedList:
         print()
         print("--" * 50)
 
-    def reverse_linked_list(self , p1):
+    def reverse_linked_list_recursive(self, p1):
         if p1.next == None:
             self.head = p1
             return self.head
         current = p1
         next_ = current.next
-        self.reverse_linked_list(next_)
+        self.reverse_linked_list_recursive(next_)
         next_.next = current
         current.next = None
+
+    def reverse_linked_list_iterative(self):
+        previous = None
+        while self.head != None:
+            current = next_ = self.head
+            next_ = current.next
+            self.head = next_
+            current.next = previous
+            previous = current
+            current = self.head
+        self.head = previous
 
     def get_head(self):
         return self.head
@@ -103,39 +114,43 @@ l1.insertion_start(Node(1))
 print("After Insertion 1 at start")
 l1.traverse_list()
 print()
-print("Linked List Reversed ")
-l1.reverse_linked_list(l1.get_head())
+print("Linked List Reversed Iterative")
+l1.reverse_linked_list_iterative()
 l1.traverse_list()
 print()
 l1.insertion_start(Node(2))
 print("After Insertion 2 at start")
 l1.traverse_list()
 print()
-print("Linked List Reversed ")
-l1.reverse_linked_list(l1.get_head())
+print("Linked List Reversed Iterative")
+l1.reverse_linked_list_iterative()
 l1.traverse_list()
 print()
 l1.insertion_specific(1, Node(4))
 print("After Insertion of Node 4 at postion 1 ")
 l1.traverse_list()
 print()
-print("Linked List Reversed ")
-l1.reverse_linked_list(l1.get_head())
+print("Linked List Reversed Iterative")
+l1.reverse_linked_list_iterative()
+l1.traverse_list()
+print()
+print("Linked List Reversed Iterative")
+l1.reverse_linked_list_iterative()
 l1.traverse_list()
 print()
 l1.insertion_last(Node(3))
 print("After Insertion of Node 3 at postion last")
 l1.traverse_list()
 print()
-print("Linked List Reversed ")
-l1.reverse_linked_list(l1.get_head())
+print("Linked List Reversed Iterative")
+l1.reverse_linked_list_iterative()
 l1.traverse_list()
 print()
-l1.deletion_specific(1)
-print("After Deletion at postion 1 ")
-l1.traverse_list()
-print()
-print("Linked List Reversed ")
-l1.reverse_linked_list(l1.get_head())
-l1.traverse_list()
-print()
+# l1.deletion_specific(1)
+# print("After Deletion at postion 1 ")
+# l1.traverse_list()
+# print()
+# print("Linked List Reversed Iterative")
+# l1.reverse_linked_list_iterative()
+# l1.traverse_list()
+# print()

@@ -38,16 +38,16 @@ def rotateList(head, k):
     if size <= k:
         pass
     else:
-        while temp.next!=None:
-            temp = temp.next
-        temp.next = head
+        # while temp.next!=None:
+        #     temp = temp.next
+        # temp.next = head
         end = None
         while k>0:
             end = head
             head = head.next
             k -=1
         end.next = None
-    return head
+        return temp , head
         
 
 if __name__ == '__main__':
