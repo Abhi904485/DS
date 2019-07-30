@@ -29,34 +29,14 @@ def createList(arr, n):
     return lis.head
 
 
-def length(head):
-    if head:
-        count = 1
-        while head.next != None:
-            head = head.next
-            count += 1
-        return count
-
-
 def findMid(head):
-    if head:
-        t1= t2 = head
-        if length(head) % 2 == 0:
-            try:
-                while t2 != None:
-                    t1 = t1.next
-                    t2 = t2.next.next
-                return t1
-            except:
-                return t1
-        else:
-            try:
-                while t2.next != None:
-                    t1 = t1.next
-                    t2 = t2.next.next
-                return t1
-            except:
-                return t1
+    sp = head
+    fp = head
+    while fp and fp.next:
+        sp = sp.next
+        fp = fp.next.next
+    return sp
+
 
 
 if __name__ == '__main__':
