@@ -41,9 +41,6 @@ class LinkedList:
         print(' ')
 
 
-my_list = []
-
-
 def deleteNode(curr_node):
     prev = None
     while curr_node.next:
@@ -51,7 +48,7 @@ def deleteNode(curr_node):
         prev = curr_node
         curr_node = curr_node.next
     prev.next = None
-  
+
 
 if __name__ == '__main__':
     t = int(input())
