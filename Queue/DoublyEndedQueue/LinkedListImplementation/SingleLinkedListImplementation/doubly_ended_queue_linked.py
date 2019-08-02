@@ -1,7 +1,7 @@
-import sys
-sys.path += ['.']
-
-from DoublyEndedQueue.LinkedListImplementation.SingleLinkedListImplementation.node import Node
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
 
 
 class DoublyEndedQueueSingleLinked:
@@ -86,7 +86,7 @@ class DoublyEndedQueueSingleLinked:
                 self.front = -1
                 self.rear = -1
                 self.size = 0
-                temp =self.head
+                temp = self.head
                 print("Dequeue {} from front and front location = {}(index) , rear location = {}(index) and size = {} ".format(
                     temp.data, self.front, self.rear, self.size))
                 self.head = None

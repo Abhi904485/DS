@@ -1,6 +1,8 @@
-import sys
-sys.path += ['.']
-from LinkedList.CircularDoublyLinkedList.node import Node
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        self.pre = None
 
 
 class CircularDoublyLinkedList:

@@ -1,7 +1,8 @@
-import sys
-sys.path += ['.']
-
-from LinkedList.DoublyLinkedList.node import Node
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        self.previous = None
 
 
 class DoublyLinkedList():
