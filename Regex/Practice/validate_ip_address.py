@@ -5,7 +5,9 @@ def is_valid(ip_address: str):
             if int(i) > 255:
                 return 0
             else:
-                return 1
+                if len(i)>=2 and i[0]== '0':
+                    return 0
+        return 1
     else:
         return 0
 
