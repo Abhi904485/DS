@@ -4,5 +4,5 @@ for i in range(len(a) - 1):
     for j in range(i + 1, len(a)):
         if a[j] < a[i]:
             min_index = j
-        a[i], a[min_index] = a[min_index], a[i]
+            a[i], a[min_index] = a[min_index], a[i]
 print(a)
